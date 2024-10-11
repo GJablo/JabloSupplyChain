@@ -4,13 +4,21 @@
       "main": "src/CoffeeSupplyChain_backend/main.mo",
       "type": "motoko"
     },
+    "CoffeeFarm": {
+      "main": "src/CoffeeFarm/CoffeeFarm.mo",
+      "type": "motoko"
+    },
+    "Roasters": {
+      "main": "src/Roasters/Roasters.mo",
+      "type": "motoko"
+    },
+    "Retailers": {
+      "main": "src/Retailers/Retailers.mo",
+      "type": "motoko"
+    },
     "CoffeeSupplyChain_frontend": {
-      "dependencies": [
-        "CoffeeSupplyChain_backend"
-      ],
-      "source": [
-        "src/CoffeeSupplyChain_frontend/dist"
-      ],
+      "dependencies": ["CoffeeSupplyChain_backend"],
+      "source": ["src/CoffeeSupplyChain_frontend/dist"],
       "type": "assets",
       "workspace": "CoffeeSupplyChain_frontend"
     }
