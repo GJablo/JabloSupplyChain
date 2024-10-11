@@ -8,6 +8,10 @@
       "main": "src/CoffeeFarm/CoffeeFarm.mo",
       "type": "motoko"
     },
+    "Consumers": {
+      "main": "src/Consumers/Consumers.mo",
+      "type": "motoko"
+    },
     "Roasters": {
       "main": "src/Roasters/Roasters.mo",
       "type": "motoko"

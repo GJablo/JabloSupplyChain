@@ -10,6 +10,16 @@ actor FarmCannister {
     batches: [Batch];
   };
 
+    type Product = {
+    id: Nat;
+    name: Text;
+    description: Text;
+    price: Nat;
+    farmId: Nat;
+    certifications: [Text];
+    quantity: Nat;
+  };
+
   // Data structure to store coffee batch information
   type Batch = {
     id: Nat;
@@ -17,6 +27,9 @@ actor FarmCannister {
     batchName: Text;
     quantity: Nat;
   };
+
+    // Array to store all products
+  var products: [Product] = [];
 
   // Array to store all farms
   var farms: [Farm] = [];
@@ -30,6 +43,21 @@ actor FarmCannister {
     };
     farms := Array.append(farms, [newFarm]);
     return newFarm.id;
+  };
+
+    // Function to add a new product
+  public func addProduct(name: Text, description: Text, price: Nat, farmId: Nat, certifications: [Text], quantity: Nat): async Nat {
+    let newProduct: Product = {
+      id = products.size();
+      name;
+      description;
+      price;
+      farmId;
+      certifications;
+      quantity;
+    };
+    products := Array.append(products, [newProduct]);
+    return newProduct.id;
   };
 
   // Function to get a farm by ID
